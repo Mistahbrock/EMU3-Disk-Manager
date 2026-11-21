@@ -1,5 +1,8 @@
 // EMU3Types.h — E-MU 3/4 on-disk filesystem and bank structures
-// Based on dagargo/emu3fs and dagargo/emu3bm (GPLv3)
+// Portions of this file are derived from emu3fs and emu3bm,
+// Copyright (C) 2018 David García Goñi <dagargo@gmail.com>, licensed under the GNU GPL version 3 or later
+// (https://github.com/dagargo/emu3fs, https://github.com/dagargo/emu3bm).
+// The rest is Copyright (C) 2026 Rhyno Audio. This file is part of EMU3 Disk Manager, free software under the GPLv3.
 
 #pragma once
 #import <Foundation/Foundation.h>

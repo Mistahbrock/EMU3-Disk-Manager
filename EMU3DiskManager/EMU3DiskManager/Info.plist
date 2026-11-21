@@ -21,7 +21,7 @@
 	<key>LSMinimumSystemVersion</key>
 	<string>12.0</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Based on dagargo/emu3fs and dagargo/emu3bm (GPLv3)</string>
+	<string>Copyright © 2026 Rhyno Audio. Free software under the GNU GPL v3. Based on emu3fs and emu3bm by David García Goñi.</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 	<key>CFBundleDocumentTypes</key>

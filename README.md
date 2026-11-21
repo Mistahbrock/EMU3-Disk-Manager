@@ -49,5 +49,5 @@ on real disks are in [EMU3DiskManager/docs/provenance](EMU3DiskManager/docs/prov
 
 ## License and credits
 
-GPLv3. Based on the work of dagargo (emu3fs, emu3bm) and the BlueSCSI project. E-mu, Emulator and EOS are
+GPLv3. Based on the work of David García Goñi (emu3fs, emu3bm) and the BlueSCSI project (see [CREDITS.md](CREDITS.md) for the full list, including the libraries inside the firmware). The firmware is an unofficial, modified build. E-mu, Emulator and EOS are
 trademarks of their owners; this project is independent and not affiliated with them.

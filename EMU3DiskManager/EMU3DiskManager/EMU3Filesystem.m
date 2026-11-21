@@ -1,3 +1,8 @@
+// EMU3Filesystem.m: reads and writes E-mu EOS disk images.
+// The bank-table offsets and the structures in EMU3Types.h follow emu3fs and emu3bm,
+// Copyright (C) 2018 David García Goñi <dagargo@gmail.com>, GNU GPL version 3 or later.
+// The rest is Copyright (C) 2026 Rhyno Audio. Part of EMU3 Disk Manager, free software under the GPLv3.
+
 #import "EMU3Filesystem.h"
 #import "EMU3File.h"
 #import "EMU3Directory.h"

@@ -558,7 +558,15 @@ index 0bdf8a5..460c4e4 100644
  static uint16_t _desc_str[32];
 --- /dev/null
 +++ b/src/BlueSCSI_usbblk.cpp
-@@ -0,0 +1,203 @@
+@@ -0,0 +1,211 @@
++/*
++ * USB block link for BlueSCSI v2 (card-less operation).
++ * Copyright (c) 2026 Rhyno Audio. Part of EMU3 Disk Manager (https://github.com/Mistahbrock/EMU3-Disk-Manager).
++ *
++ * This program is free software: you can redistribute it and/or modify it under the terms of the
++ * GNU General Public License as published by the Free Software Foundation, version 3 of the License.
++ * It is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY.
++ */
 +#include "BlueSCSI_usbblk.h"
 +#include "BlueSCSI_log.h"
 +extern "C" {
@@ -764,7 +772,15 @@ index 0bdf8a5..460c4e4 100644
 +}
 --- /dev/null
 +++ b/src/BlueSCSI_usbblk.h
-@@ -0,0 +1,34 @@
+@@ -0,0 +1,42 @@
++/*
++ * USB block link for BlueSCSI v2 (card-less operation).
++ * Copyright (c) 2026 Rhyno Audio. Part of EMU3 Disk Manager (https://github.com/Mistahbrock/EMU3-Disk-Manager).
++ *
++ * This program is free software: you can redistribute it and/or modify it under the terms of the
++ * GNU General Public License as published by the Free Software Foundation, version 3 of the License.
++ * It is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY.
++ */
 +/**
 + * USB block link: the SCSI side of the board asks the Mac (over the second USB CDC port)
 + * for disk blocks instead of reading them from the SD card.
