@@ -1,0 +1,14 @@
+.DS_Store
+build/
+DerivedData/
+xcuserdata/
+*.pkg
+*.uf2
+EMU3FSKit/emu3nfs
+EMU3FSKit/linkd/emu3linkd
+EMU3FSKit/automount/pkg/root/Applications/
+EMU3FSKit/automount/pkg/root/Library/Application Support/EMU3/emu3nfs
+EMU3FSKit/automount/pkg/root/Library/Application Support/EMU3/emu3linkd
+EMU3FSKit/automount/pkg/root/Library/Application Support/EMU3/LICENSE
+EMU3FSKit/automount/pkg/root/Library/Application Support/EMU3/CREDITS.md
+EMU3FSKit/automount/pkg/distribution.xml

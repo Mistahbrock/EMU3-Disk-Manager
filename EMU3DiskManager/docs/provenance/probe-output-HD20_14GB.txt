@@ -1,0 +1,79 @@
+# Observations from HD20_14GB.hda (15032385536 bytes = 29360128 blocks of 512)
+
+## Superblock (block 0)
+O1  bytes 0x00..0x03 = b'EMU3'  (signature)
+O2  dword at 0x04 = 29360127   (0x1bfffff)
+O2  dword at 0x08 = 9          (0x9)
+O2  dword at 0x0c = 7          (0x7)
+O2  dword at 0x10 = 16         (0x10)
+O2  dword at 0x14 = 217        (0xd9)
+O2  dword at 0x18 = 2          (0x2)
+O2  dword at 0x1c = 7          (0x7)
+O2  dword at 0x20 = 233        (0xe9)
+O2  dword at 0x24 = 1791       (0x6ff)
+O2  dword at 0x28 = 264        (0x108)
+O2  dword at 0x2c = 2048       (0x800)
+O2  dword at 0x30 = 218169344  (0xd010000)
+O2  dword at 0x34 = 0          (0x0)
+O2  dword at 0x38 = 0          (0x0)
+O2  dword at 0x3c = 0          (0x0)
+
+## Geometry read from the dwords
+G1  root directory: blocks 9 .. 15  (dword 0x08 = start, 0x0c = count)
+G2  folder pool: blocks 16 .. 232  (dwords 0x10, 0x14)
+G3  allocation table (FAT): start block 2, 7 blocks  (dwords 0x18, 0x1c)
+G4  data area starts at block 233  (dword 0x20); highest cluster number 1791 (dword 0x24)
+G5  cluster size: dword 0x28 low byte = 8 -> cluster = 64 << 8 = 16384 blocks = 8.0 MB
+G6  blocks from data area to end of file: 29359895 -> 1791.99 clusters of that size (header says 1791)
+
+## Allocation table
+F1  entries 0..1791: free(0x0000)=1380  end-of-chain(0x7fff)=292  0x8000=1  link-to-next=0
+F2  entry 0 = 0x8000
+
+## Directory entries (32 bytes each: name[16], unknown, id, then 14 bytes of attributes)
+D2  folder Default Folder             id=80 block_list=[16, 17, 42, 21, 22, 43, -1]
+D1  /Default Folder/Orbit Instrmt      id=00 type=81 start=422 clusters=2 blocks=248 bytes=185 props=00 45 34 42 30 -> size 8515257, FAT chain length 2
+D1  /Default Folder/Orbit Presets      id=01 type=81 start=1 clusters=1 blocks=16047 bytes=495 props=00 45 34 42 30 -> size 8216047, FAT chain length 1
+D1  /Default Folder/Orbit Presets 4    id=02 type=81 start=2 clusters=1 blocks=16046 bytes=221 props=00 45 34 42 30 -> size 8215261, FAT chain length 1
+D1  /Default Folder/Phatt Instrmt      id=03 type=81 start=3 clusters=2 blocks=286 bytes=47 props=00 45 34 42 30 -> size 8534575, FAT chain length 2
+D1  /Default Folder/Phatt Presets      id=04 type=81 start=5 clusters=2 blocks=267 bytes=69 props=00 45 34 42 30 -> size 8524869, FAT chain length 2
+D1  /Default Folder/Phatt Presets 4    id=05 type=81 start=7 clusters=2 blocks=103 bytes=493 props=00 45 34 42 30 -> size 8441325, FAT chain length 2
+D1  /Default Folder/Proteus1Instrmt    id=06 type=81 start=9 clusters=1 blocks=8506 bytes=355 props=00 45 34 42 30 -> size 4354915, FAT chain length 1
+D1  /Default Folder/Proteus1Presets    id=07 type=81 start=10 clusters=1 blocks=8603 bytes=391 props=00 45 34 42 30 -> size 4404615, FAT chain length 1
+D1  /Default Folder/Proteus2Instrmt    id=08 type=81 start=11 clusters=2 blocks=7 bytes=417 props=00 45 34 42 30 -> size 8392097, FAT chain length 2
+D1  /Default Folder/Proteus2Presets    id=09 type=81 start=13 clusters=1 blocks=16206 bytes=31 props=00 45 34 42 30 -> size 8296991, FAT chain length 1
+D1  /Default Folder/Proteus3Instrmt    id=0a type=81 start=14 clusters=1 blocks=8342 bytes=407 props=00 45 34 42 30 -> size 4270999, FAT chain length 1
+D1  /Default Folder/Proteus3Presets    id=0b type=81 start=15 clusters=1 blocks=8047 bytes=369 props=00 45 34 42 30 -> size 4119921, FAT chain length 1
+D1  /Default Folder/Protozoa           id=0c type=81 start=16 clusters=1 blocks=28 bytes=139 props=00 45 34 42 30 -> size 13963, FAT chain length 1
+D3  totals: files=292 folders=9  file type bytes seen: {'0x81': 292}  folder id bytes seen: {'0x80': 8, '0x40': 1}
+D4  FAT chain length equals the 'clusters' field: 292 of 292 files
+
+## File contents (first bytes of each distinct kind)
+B1  /Default Folder/Orbit Instrmt  size=8515257  first 16 bytes=b'EMULATOR 3X    \x00'
+B2    header: name=b'Orbit Instrmt  X' objects=11 next_preset=128377 next_sample=8386804 preset_blocks=251 sample_blocks=16381 total_blocks=16632 selected_preset=1
+B3    first preset-address values @0x17ca: ['0x0', '0x0', '0x15e'] ; first sample-address values @0x1bd2: ['0x400000', '0x40159a', '0x401b46'] ; preset area begins @0x2b72
+B1  /Default Folder/Orbit Presets 4  size=8215261  first 16 bytes=b'EMU SI-32 v3   \x00'
+B2    header: name=b'Orbit Presets 4K' objects=26 next_preset=202503 next_sample=8012682 preset_blocks=396 sample_blocks=15650 total_blocks=16046 selected_preset=0
+B3    first preset-address values @0x17ca: ['0x0', '0x286', '0x50c'] ; first sample-address values @0x1bd2: ['0x400000', '0x4023e6', '0x402678'] ; preset area begins @0x2b72
+B1  /Root files/New Folder  size=512  first 16 bytes=b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+B1  /PlatinumPhattCD/Credits  size=23484  first 16 bytes=b'FORM\x00\x00[\xb0E4B0TOC1'
+B2    IFF container: form type=b'E4B0' first chunk id=b'TOC1' length=960
+B1  /PlatinumPhattCD/Distortion Gtr  size=11002718  first 16 bytes=b'FORM\x00\xa7\xe3RE4B0TOC1'
+B2    IFF container: form type=b'E4B0' first chunk id=b'TOC1' length=2368
+B1  /PlatinumPhattCD/Electric Basses  size=53813468  first 16 bytes=b'FORM\x035 \xd0E4B0TOC1'
+B2    IFF container: form type=b'E4B0' first chunk id=b'TOC1' length=4512
+
+## All banks: consistency of the header and the two tables (3X / ESI-32 v3 layout)
+B4  3X/ESI-32 banks: 90
+B5    size in blocks (ceil(file size/512)) equals header total_blocks (0x48): 49 of 90
+B6    sample address table @0x1bd2 starts at 0x400000 and rises strictly: 90 of 90
+B7    header 'objects' (0x20) equals sample count + preset count (+0/+1) from the tables: 4 of 90
+B8      e.g. /Default Folder/Orbit Instrmt      samples(table)=286 presets(table)=0 objects=11
+B8      e.g. /Default Folder/Orbit Presets      samples(table)=558 presets(table)=0 objects=2
+B8      e.g. /Default Folder/Orbit Presets 4    samples(table)=558 presets(table)=0 objects=26
+B8      e.g. /Default Folder/Phatt Instrmt      samples(table)=487 presets(table)=0 objects=14
+B8      e.g. /Default Folder/Phatt Presets      samples(table)=493 presets(table)=0 objects=12
+B9  IFF (E4B0) files: 200 ; computed file size minus (8 + FORM length): {4: 200}
+
+## Block 'bytes in last block' sanity
+S1  files with blocks > cluster size or bytes > 512: 0

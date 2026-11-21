@@ -1,0 +1,379 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A10000000000000000000121 /* EMU3BlockServer.m in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000122 /* EMU3BlockServer.m */; };
+		A10000000000000000000123 /* EMU3SamplerLink.m in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000125 /* EMU3SamplerLink.m */; };
+		A10000000000000000000001 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000101 /* main.m */; };
+		A10000000000000000000002 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000103 /* AppDelegate.m */; };
+		A10000000000000000000003 /* EMU3File.m in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000105 /* EMU3File.m */; };
+		A10000000000000000000004 /* EMU3Directory.m in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000107 /* EMU3Directory.m */; };
+		A10000000000000000000005 /* EMU3Filesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000109 /* EMU3Filesystem.m */; };
+		A10000000000000000000006 /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1000000000000000000010B /* MainWindowController.m */; };
+		A10000000000000000000007 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A10000000000000000000201 /* Cocoa.framework */; };
+		A10000000000000000000009 /* AppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000110 /* AppIcon.icns */; };
+		A10000000000000000000010 /* Help.html in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000111 /* Help.html */; };
+		A10000000000000000000128 /* emu3nfs in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000127 /* emu3nfs */; };
+		A10000000000000000000131 /* EMU3VolumeMount.m in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000129 /* EMU3VolumeMount.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A10000000000000000000100 /* EMU3DiskManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EMU3DiskManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A10000000000000000000122 /* EMU3BlockServer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EMU3BlockServer.m; sourceTree = "<group>"; };
+		A10000000000000000000124 /* EMU3BlockServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EMU3BlockServer.h; sourceTree = "<group>"; };
+		A10000000000000000000125 /* EMU3SamplerLink.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EMU3SamplerLink.m; sourceTree = "<group>"; };
+		A10000000000000000000126 /* EMU3SamplerLink.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EMU3SamplerLink.h; sourceTree = "<group>"; };
+		A10000000000000000000101 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A10000000000000000000102 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A10000000000000000000103 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A10000000000000000000104 /* EMU3Types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EMU3Types.h; sourceTree = "<group>"; };
+		A10000000000000000000105 /* EMU3File.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EMU3File.m; sourceTree = "<group>"; };
+		A10000000000000000000106 /* EMU3File.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EMU3File.h; sourceTree = "<group>"; };
+		A10000000000000000000107 /* EMU3Directory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EMU3Directory.m; sourceTree = "<group>"; };
+		A10000000000000000000108 /* EMU3Directory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EMU3Directory.h; sourceTree = "<group>"; };
+		A10000000000000000000109 /* EMU3Filesystem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EMU3Filesystem.m; sourceTree = "<group>"; };
+		A1000000000000000000010A /* EMU3Filesystem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EMU3Filesystem.h; sourceTree = "<group>"; };
+		A1000000000000000000010B /* MainWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainWindowController.m; sourceTree = "<group>"; };
+		A1000000000000000000010C /* MainWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainWindowController.h; sourceTree = "<group>"; };
+		A1000000000000000000010D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A10000000000000000000110 /* AppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = AppIcon.icns; sourceTree = "<group>"; };
+		A10000000000000000000111 /* Help.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Help.html; sourceTree = "<group>"; };
+		A10000000000000000000201 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		A10000000000000000000127 /* emu3nfs */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = emu3nfs; sourceTree = "<group>"; };
+		A10000000000000000000129 /* EMU3VolumeMount.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EMU3VolumeMount.m; sourceTree = "<group>"; };
+		A10000000000000000000130 /* EMU3VolumeMount.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EMU3VolumeMount.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A10000000000000000000300 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000000000000000000007 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A10000000000000000000400 = {
+			isa = PBXGroup;
+			children = (
+				A10000000000000000000401 /* EMU3DiskManager */,
+				A10000000000000000000403 /* Frameworks */,
+				A10000000000000000000404 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A10000000000000000000401 /* EMU3DiskManager */ = {
+			isa = PBXGroup;
+			children = (
+				A10000000000000000000101 /* main.m */,
+				A10000000000000000000102 /* AppDelegate.h */,
+				A10000000000000000000103 /* AppDelegate.m */,
+				A1000000000000000000010C /* MainWindowController.h */,
+				A1000000000000000000010B /* MainWindowController.m */,
+				A10000000000000000000402 /* Core */,
+				A1000000000000000000010D /* Info.plist */,
+				A10000000000000000000110 /* AppIcon.icns */,
+				A10000000000000000000111 /* Help.html */,
+			);
+			path = EMU3DiskManager;
+			sourceTree = "<group>";
+		};
+		A10000000000000000000402 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A10000000000000000000104 /* EMU3Types.h */,
+				A10000000000000000000106 /* EMU3File.h */,
+				A10000000000000000000105 /* EMU3File.m */,
+				A10000000000000000000108 /* EMU3Directory.h */,
+				A10000000000000000000107 /* EMU3Directory.m */,
+				A1000000000000000000010A /* EMU3Filesystem.h */,
+				A10000000000000000000109 /* EMU3Filesystem.m */,
+				A10000000000000000000127 /* emu3nfs */,
+				A10000000000000000000130 /* EMU3VolumeMount.h */,
+				A10000000000000000000129 /* EMU3VolumeMount.m */,
+				A10000000000000000000124 /* EMU3BlockServer.h */,
+				A10000000000000000000122 /* EMU3BlockServer.m */,
+				A10000000000000000000126 /* EMU3SamplerLink.h */,
+				A10000000000000000000125 /* EMU3SamplerLink.m */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		A10000000000000000000403 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A10000000000000000000201 /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A10000000000000000000404 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A10000000000000000000100 /* EMU3DiskManager.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A10000000000000000000500 /* EMU3DiskManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A10000000000000000000601 /* Build configuration list for PBXNativeTarget "EMU3DiskManager" */;
+			buildPhases = (
+				A10000000000000000000301 /* Sources */,
+				A10000000000000000000300 /* Frameworks */,
+				A10000000000000000000302 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EMU3DiskManager;
+			productName = EMU3DiskManager;
+			productReference = A10000000000000000000100 /* EMU3DiskManager.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A10000000000000000000700 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 2650;
+				TargetAttributes = {
+					A10000000000000000000500 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = A10000000000000000000600 /* Build configuration list for PBXProject "EMU3DiskManager" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A10000000000000000000400;
+			productRefGroup = A10000000000000000000404 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A10000000000000000000500 /* EMU3DiskManager */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A10000000000000000000302 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000000000000000000009 /* AppIcon.icns in Resources */,
+				A10000000000000000000010 /* Help.html in Resources */,
+				A10000000000000000000128 /* emu3nfs in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A10000000000000000000301 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000000000000000000001 /* main.m in Sources */,
+				A10000000000000000000002 /* AppDelegate.m in Sources */,
+				A10000000000000000000003 /* EMU3File.m in Sources */,
+				A10000000000000000000004 /* EMU3Directory.m in Sources */,
+				A10000000000000000000005 /* EMU3Filesystem.m in Sources */,
+				A10000000000000000000006 /* MainWindowController.m in Sources */,
+				A10000000000000000000121 /* EMU3BlockServer.m in Sources */,
+				A10000000000000000000131 /* EMU3VolumeMount.m in Sources */,
+				A10000000000000000000123 /* EMU3SamplerLink.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A10000000000000000000801 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+			};
+			name = Debug;
+		};
+		A10000000000000000000802 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		A10000000000000000000803 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					arm64,
+					x86_64,
+				);
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = WPR6A3C8NM;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				INFOPLIST_FILE = EMU3DiskManager/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "net-rhyno-audio.emu3diskmanager";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		A10000000000000000000804 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					arm64,
+					x86_64,
+				);
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = WPR6A3C8NM;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				INFOPLIST_FILE = EMU3DiskManager/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "net-rhyno-audio.emu3diskmanager";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A10000000000000000000600 /* Build configuration list for PBXProject "EMU3DiskManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A10000000000000000000801 /* Debug */,
+				A10000000000000000000802 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A10000000000000000000601 /* Build configuration list for PBXNativeTarget "EMU3DiskManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A10000000000000000000803 /* Debug */,
+				A10000000000000000000804 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A10000000000000000000700 /* Project object */;
+}

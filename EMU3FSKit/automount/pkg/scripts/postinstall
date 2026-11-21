@@ -1,0 +1,10 @@
+#!/bin/bash
+# Start the auto-mount agent for the user who is installing, without a logout.
+rm -f "/Library/Application Support/EMU3/emu3-automount.py" "/Library/Application Support/EMU3/emu3fuse"   # replaced by emu3linkd and emu3nfs
+U=$(stat -f%u /dev/console 2>/dev/null)
+if [ -n "$U" ] && [ "$U" != 0 ]; then
+  launchctl bootout gui/$U /Library/LaunchAgents/com.emu3.automount.plist 2>/dev/null
+  pkill -x emu3linkd 2>/dev/null; sleep 1
+  launchctl bootstrap gui/$U /Library/LaunchAgents/com.emu3.automount.plist 2>/dev/null
+fi
+exit 0

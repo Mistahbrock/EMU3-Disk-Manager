@@ -1,0 +1,22 @@
+#!/bin/bash
+# Optional "Remove old installs": deletes leftovers of earlier versions. Only legacy locations are touched, so it is
+# safe whatever order the installer runs it in; the current app, helper and agent live in /Applications and /Library.
+U=$(stat -f%u /dev/console 2>/dev/null)
+H=""
+[ -n "$U" ] && [ "$U" != 0 ] && H=$(dscl . -read /Users/$(id -nu "$U") NFSHomeDirectory 2>/dev/null | awk '{print $2}')
+if [ -n "$H" ]; then
+  # per-user login agent of the old script install (the system-wide one in /Library/LaunchAgents replaces it)
+  launchctl bootout gui/$U "$H/Library/LaunchAgents/com.emu3.automount.plist" 2>/dev/null
+  rm -f "$H/Library/LaunchAgents/com.emu3.automount.plist"
+  # per-user copies of the helpers and the old Python agent (settings files like watch.txt are kept)
+  rm -f "$H/Library/Application Support/EMU3/emu3fuse" "$H/Library/Application Support/EMU3/emu3linkd" \
+        "$H/Library/Application Support/EMU3/emu3-automount.py"
+  # older app copies in the user's Applications folder
+  rm -rf "$H/Applications/EMU3DiskManager.app" "$H/Applications/EMU3 Disk Manager.app"
+  rm -f /tmp/emu3-automount.log
+fi
+rm -f "/Library/Application Support/EMU3/emu3-automount.py"
+rm -rf "/Applications/EMU3 Disk Manager.app"
+# forget receipts of old package identifiers
+for id in com.emu3.automount com.emu3.helper com.emu3.fuse; do pkgutil --forget "$id" >/dev/null 2>&1; done
+exit 0

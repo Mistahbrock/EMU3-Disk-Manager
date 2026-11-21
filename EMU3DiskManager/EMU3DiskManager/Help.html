@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMU3 Disk Manager - Help</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #333333;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            padding: 40px;
+            max-width: 940px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            border-bottom: 3px solid #007AFF;
+            padding-bottom: 15px;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: #666666;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #007AFF;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            border-left: 5px solid #007AFF;
+            padding-left: 15px;
+        }
+
+        h3 {
+            font-size: 18px;
+            color: #333333;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: #555555;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: #555555;
+        }
+
+        code {
+            background-color: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: Monaco, "Courier New", monospace;
+            font-size: 14px;
+            color: #d63384;
+        }
+
+        kbd {
+            background-color: #f5f5f5;
+            border: 1px solid #cccccc;
+            border-radius: 3px;
+            padding: 3px 8px;
+            font-family: Monaco, monospace;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #007AFF;
+            color: #ffffff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .section {
+            background-color: #f9f9f9;
+            border-left: 4px solid #007AFF;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .tip {
+            background-color: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 3px;
+        }
+
+        .warning {
+            background-color: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 3px;
+        }
+
+        .footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 2px solid #dddddd;
+            font-size: 14px;
+            color: #999999;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<h1>EMU3 Disk Manager - Help</h1>
+<p class="subtitle">Quick reference for managing E-MU Emulator III/IV disk images</p>
+
+<h2>Overview</h2>
+<p>EMU3 Disk Manager lets you mount one or more E-MU hard disk images, browse their folders, organize files, copy content between images, and export banks or samples to your Mac.</p>
+<p>Together with a BlueSCSI board, it can also act as a <strong>live USB-to-SCSI disk</strong> for an E-MU sampler: the sampler sees one of your images as its hard disk while you keep working on the same image on the Mac (see <strong>Sampler Link</strong> below).</p>
+<p>The left pane lists mounted disk images. The right pane shows the selected image or folder contents. The bottom status areas show counts for folders, banks, presets, samples, and disk space.</p>
+
+<h2>Mounting Images</h2>
+<ol>
+    <li>Click <strong>Mount Image</strong> in the toolbar.</li>
+    <li>Select one or more E-MU disk images, such as <code>.hda</code> files. Hold <kbd>Cmd</kbd> or <kbd>Shift</kbd> to select several at once.</li>
+    <li>Each image appears in the left mount list.</li>
+    <li>Select a mounted image to browse its root folder on the right.</li>
+</ol>
+
+<div class="tip">
+    <strong>Tip:</strong> You can mount multiple images at once, then drag files or folders between them.
+</div>
+
+<h2>Creating a New Image</h2>
+<ol>
+    <li>Choose <strong>Tools &gt; New Image&hellip;</strong> (<kbd>Shift</kbd>+<kbd>Cmd</kbd>+<kbd>N</kbd>).</li>
+    <li>Pick a size from the presets (8 MB up to 512 GB), or type your own.</li>
+    <li>The <strong>Name</strong> field is filled in for you as <code>HD20_&lt;size&gt;.hda</code> and can be edited.</li>
+    <li>The image is saved in your image folder (default <code>~/EMU3 Images</code>) and mounted.</li>
+</ol>
+<ul>
+    <li>512 GB is the largest disk the sampler can address, so it is the maximum.</li>
+    <li>Large images are sparse files: they only take disk space as data is written. The dialog shows the free space of the destination and warns when the volume cannot hold the full size.</li>
+    <li>The image is formatted with the same layout the sampler itself uses, so the sampler shows the full size.</li>
+    <li>Use <strong>Settings&hellip;</strong> (<kbd>Cmd</kbd>+<kbd>,</kbd>, in the app menu) to choose another image folder, for example on a big disk or a NAS share.</li>
+</ul>
+
+<h2>Automatic Mounting</h2>
+<p>The installer adds a small background helper (<code>emu3linkd</code>) that starts when you log in. It mounts every <code>.hda</code> and <code>.iso</code> image in your image folder as a volume under <code>~/EMU3 Disks</code>, so the files are always available in Finder (no extra software is needed: macOS mounts them through its own NFS client).</p>
+<ul>
+    <li>The helper keeps running when you quit the app.</li>
+    <li>Change the watched folder in <strong>Settings&hellip;</strong> (<kbd>Cmd</kbd>+<kbd>,</kbd>).</li>
+    <li><strong>Tools &gt; Mount Image as Volume</strong> and <strong>Unmount Image Volume</strong> do the same for a single image by hand.</li>
+</ul>
+
+<h2>Folder Tree</h2>
+<p>The left pane is a tree. Each mounted image is a top-level item, and its folders are listed below it.</p>
+<ul>
+    <li>Click an image or a folder in the tree to show its contents on the right.</li>
+    <li>Click the small arrow next to an image or folder to expand or collapse it.</li>
+    <li>Right-click in the tree, or use the <strong>View</strong> menu, to <strong>Expand All</strong> (&#8997;&#8984;=) or <strong>Collapse All</strong> (&#8997;&#8984;&minus;) folders.</li>
+    <li>The tree follows you: when you open a folder on the right, it is highlighted in the tree.</li>
+    <li>New, renamed and deleted folders show up in the tree automatically.</li>
+</ul>
+
+<h3>Moving Files with the Tree</h3>
+<ol>
+    <li>Select one or more files in the file list on the right.</li>
+    <li>Drag them onto an image or a folder in the tree on the left.</li>
+    <li>Release the mouse button. The files are <strong>moved</strong> to that folder.</li>
+</ol>
+<ul>
+    <li>Hold <kbd>Option</kbd> while dropping to <strong>copy</strong> instead of move.</li>
+    <li>Dropping on an image in the tree puts the files in that image's top folder.</li>
+    <li>Dropping on a folder in a different mounted image copies the files into that image.</li>
+    <li>Files dragged from Finder onto the tree are imported into the folder you drop on.</li>
+    <li>Dragging folders (not just files) always copies them.</li>
+    <li>Read-only images do not accept drops.</li>
+</ul>
+
+<h2>Copying an Image</h2>
+<ol>
+    <li>For a quick copy, hold <kbd>Option</kbd> and drag a mounted image row from the left pane to Finder.</li>
+    <li>Each Option-drag copy gets an increasing number before the extension, such as <code>MyImage_1.hda</code>, <code>MyImage_2.hda</code>, and so on.</li>
+    <li>You can also Option-drag within the left image pane. The green plus means the numbered copy will be mounted as another image.</li>
+    <li>To choose the copied image name, right-click the mounted image and choose <strong>Copy Image As</strong>.</li>
+    <li>Choose the destination and file name for the copied <code>.hda</code> image.</li>
+    <li>The app flushes pending image changes before copying so the copy reflects the current mounted image.</li>
+</ol>
+
+<div class="tip">
+    <strong>Tip:</strong> Use <strong>Copy Image As</strong> before major edits if you want a named backup of the full disk image.
+</div>
+
+<h2>Settings and Tooltips</h2>
+<p>Open <strong>Settings&hellip;</strong> from the app menu (<kbd>Cmd</kbd>+<kbd>,</kbd>).</p>
+<ul>
+    <li><strong>Show tooltips:</strong> buttons and controls explain themselves when the pointer rests on them. Switch it off here once you know your way around.</li>
+    <li><strong>Image folder:</strong> the folder with your disk images. The background helper mounts every <code>.hda</code> and <code>.iso</code> in it, and New Image saves there.</li>
+</ul>
+
+<h2>Navigation</h2>
+<table>
+    <tr>
+        <th>Action</th>
+        <th>Result</th>
+    </tr>
+    <tr>
+        <td>Double-click a folder</td>
+        <td>Enter that folder.</td>
+    </tr>
+    <tr>
+        <td>Select a folder and press <kbd>Return</kbd> or keypad <kbd>Enter</kbd></td>
+        <td>Enter that folder.</td>
+    </tr>
+    <tr>
+        <td>Double-click <code>..</code></td>
+        <td>Go to the parent folder.</td>
+    </tr>
+    <tr>
+        <td>Press <kbd>Backspace</kbd> or <kbd>Esc</kbd></td>
+        <td>Go to the parent folder.</td>
+    </tr>
+    <tr>
+        <td>Click a breadcrumb segment</td>
+        <td>Jump directly to that folder.</td>
+    </tr>
+</table>
+
+<h2>Selecting Items</h2>
+<ul>
+    <li>Click an item to select it.</li>
+    <li>Use <kbd>Cmd</kbd>+click to add or remove individual files or folders from the selection.</li>
+    <li>Use <kbd>Shift</kbd>+click to select a range.</li>
+    <li>The right status area updates to summarize the selected files and folders.</li>
+</ul>
+
+<h2>Creating and Organizing Folders</h2>
+<ul>
+    <li>Click <strong>New Folder</strong> in the toolbar to create a folder in the current folder.</li>
+    <li>Right-click a folder and choose <strong>New Folder Here</strong> to create a folder inside that folder.</li>
+    <li>Right-click a folder and choose <strong>Rename Folder</strong> to rename it.</li>
+    <li>Folder names are limited by the E-MU filesystem rules.</li>
+</ul>
+
+<h2>Importing Files</h2>
+<p>Import copies E-MU bank files (for example <code>.E4B</code>) from your Mac into the mounted image. The file is added to the folder that is currently open on the right.</p>
+<ol>
+    <li>Select a mounted image in the left pane and open the folder you want to import into.</li>
+    <li>Click <strong>Import</strong> in the toolbar.</li>
+    <li>Choose one or more files or folders. Hold <kbd>Cmd</kbd> to add individual items, or <kbd>Shift</kbd> to select a range.</li>
+    <li>Click <strong>Import</strong>. The status bar reports how many items were imported and how many failed.</li>
+</ol>
+<ul>
+    <li>Folders are imported together with their contents.</li>
+    <li>Import is not available if the image is read-only. Check that the <code>.hda</code> file is not locked.</li>
+    <li>Imported items change the image file on your Mac. If the image is being served to a sampler, the sampler is told about the change (see <strong>Sampler Link</strong>).</li>
+    <li>You can also drag files or folders from Finder (see <strong>Drag and Drop</strong> below).</li>
+    <li>Only E-MU bank data can be imported. WAV files must be converted to an E-MU bank first.</li>
+</ul>
+
+<h2>Copy and Paste</h2>
+<ol>
+    <li>Select one or more files in the file list.</li>
+    <li>Press <kbd>Cmd</kbd>+<kbd>C</kbd>, or right-click and choose <strong>Copy</strong>.</li>
+    <li>Open the destination folder, in the same image or in another mounted image.</li>
+    <li>Press <kbd>Cmd</kbd>+<kbd>V</kbd>, or right-click and choose <strong>Paste</strong>.</li>
+</ol>
+<ul>
+    <li>Pasting inside the same image duplicates the files into the open folder.</li>
+    <li>Pasting into another mounted image imports a copy of the files.</li>
+    <li>Copied files are also placed on the Mac clipboard, so you can paste them into Finder as <code>.E4B</code> files. You can also copy bank files in Finder and paste them here.</li>
+    <li>Paste is disabled for read-only images. Copy works on files only, not on folders.</li>
+</ul>
+
+<h2>Drag and Drop</h2>
+<table>
+    <tr>
+        <th>Drag From</th>
+        <th>Drop On</th>
+        <th>Result</th>
+    </tr>
+    <tr>
+        <td>Mac Finder</td>
+        <td>Current folder or a folder in the file list</td>
+        <td>Imports the file or folder into that location.</td>
+    </tr>
+    <tr>
+        <td>Mac Finder</td>
+        <td>A mounted image in the left pane</td>
+        <td>Imports into that image. If the image is not currently selected, the drop goes to its root folder.</td>
+    </tr>
+    <tr>
+        <td>Mount list</td>
+        <td>Finder while holding <kbd>Option</kbd></td>
+        <td>Copies the full mounted disk image file.</td>
+    </tr>
+    <tr>
+        <td>Mount list</td>
+        <td>Mount list while holding <kbd>Option</kbd></td>
+        <td>Creates a numbered copy and mounts it in the image pane.</td>
+    </tr>
+    <tr>
+        <td>Mount list (plain drag, one or several images)</td>
+        <td>Another mounted image, or a folder in it</td>
+        <td>Copies everything from the dragged image(s) into the target. A box first lists what will be copied, the free space and an estimated time; press <strong>Continue</strong> to start. Several images can be dragged and copied in one go. The work runs in the background, so the app stays responsive.</td>
+    </tr>
+    <tr>
+        <td>File list</td>
+        <td>Another folder in the same image</td>
+        <td>Copies the selected item into that folder.</td>
+    </tr>
+    <tr>
+        <td>File list</td>
+        <td>A different mounted image</td>
+        <td>Copies the selected file or folder into the target image.</td>
+    </tr>
+</table>
+
+<div class="tip">
+    <strong>Tip:</strong> A green plus cursor means the drag will copy into the target.
+</div>
+
+<h2>Delete and Undo</h2>
+<ul>
+    <li>Select files or folders and click <strong>Delete</strong> in the toolbar or menu.</li>
+    <li>Press <kbd>Forward Delete</kbd> to delete the selected item.</li>
+    <li>Press <kbd>Cmd</kbd>+<kbd>Backspace</kbd> to delete the selected item.</li>
+    <li>Press <kbd>Cmd</kbd>+<kbd>Z</kbd> to undo the last delete.</li>
+    <li>Press <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>Z</kbd> to redo when available.</li>
+</ul>
+
+<div class="warning">
+    <strong>Important:</strong> Plain <kbd>Backspace</kbd> now navigates to the parent folder. Use <kbd>Forward Delete</kbd>, toolbar Delete, menu Delete, or <kbd>Cmd</kbd>+<kbd>Backspace</kbd> when you want to delete.
+</div>
+
+<h2>Exporting</h2>
+<ol>
+    <li>Select one or more bank files.</li>
+    <li>Click <strong>Export</strong>, or right-click and choose <strong>Export to Mac</strong>.</li>
+    <li>Choose a destination folder on your Mac.</li>
+    <li>Use <strong>Export Samples</strong> to extract samples from supported bank files.</li>
+</ol>
+
+<h2>Status Areas</h2>
+<table>
+    <tr>
+        <th>Area</th>
+        <th>What It Shows</th>
+    </tr>
+    <tr>
+        <td>Left bottom mount status</td>
+        <td>Summary for the selected mounted image: folders, banks, presets, and samples.</td>
+    </tr>
+    <tr>
+        <td>Right bottom folder/status area</td>
+        <td>Summary for the current folder, or for the selected files and folders.</td>
+    </tr>
+    <tr>
+        <td>Right bottom disk space</td>
+        <td>Used and free space for the selected mounted image.</td>
+    </tr>
+</table>
+
+<h2>File List Columns</h2>
+<table>
+    <tr>
+        <th>Column</th>
+        <th>Meaning</th>
+    </tr>
+    <tr>
+        <td><strong>Name</strong></td>
+        <td>File, folder, parent row, or bank sample entry.</td>
+    </tr>
+    <tr>
+        <td><strong>Type</strong></td>
+        <td>Folder, bank, sample, or other detected file type.</td>
+    </tr>
+    <tr>
+        <td><strong>Format</strong></td>
+        <td>Detected bank format, such as Emulator III, Emulator 3X, ESI-32 v3, or Emulator IV.</td>
+    </tr>
+    <tr>
+        <td><strong>Presets</strong></td>
+        <td>Preset count for supported bank files.</td>
+    </tr>
+    <tr>
+        <td><strong>Samples</strong></td>
+        <td>Sample count for supported bank files.</td>
+    </tr>
+    <tr>
+        <td><strong>Size</strong></td>
+        <td>File size.</td>
+    </tr>
+</table>
+
+<h2>Keyboard Shortcuts</h2>
+<table>
+    <tr>
+        <th>Key</th>
+        <th>Action</th>
+    </tr>
+    <tr>
+        <td><kbd>Return</kbd> / <kbd>Enter</kbd></td>
+        <td>Enter selected folder, or follow the selected <code>..</code> row.</td>
+    </tr>
+    <tr>
+        <td><kbd>Backspace</kbd></td>
+        <td>Go to parent folder.</td>
+    </tr>
+    <tr>
+        <td><kbd>Esc</kbd></td>
+        <td>Go to parent folder.</td>
+    </tr>
+    <tr>
+        <td><kbd>Forward Delete</kbd></td>
+        <td>Delete selected item.</td>
+    </tr>
+    <tr>
+        <td><kbd>Cmd</kbd>+<kbd>Backspace</kbd></td>
+        <td>Delete selected item.</td>
+    </tr>
+    <tr>
+        <td><kbd>Cmd</kbd>+<kbd>C</kbd></td>
+        <td>Copy selected files.</td>
+    </tr>
+    <tr>
+        <td><kbd>Cmd</kbd>+<kbd>V</kbd></td>
+        <td>Paste into the open folder.</td>
+    </tr>
+    <tr>
+        <td><kbd>Cmd</kbd>+<kbd>Z</kbd></td>
+        <td>Undo last delete.</td>
+    </tr>
+    <tr>
+        <td><kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>Z</kbd></td>
+        <td>Redo when available.</td>
+    </tr>
+</table>
+
+<h2>Sampler Link: Live Disk for the Sampler</h2>
+<p>The BlueSCSI board connects to the sampler's SCSI port and to the Mac over USB. Every SCSI read and write of the sampler is passed to the Mac, which reads and writes the image file. The sampler therefore sees an ordinary hard disk, and you can copy banks, samples and CD-ROM images into the same image from the Mac without moving any SD card or cable.</p>
+<ol>
+    <li>Install the package. The background helper starts at login and serves the image chosen in <strong>Tools &gt; Sampler Link (Live USB Disk)&hellip;</strong> (<kbd>Cmd</kbd>+<kbd>K</kbd>), even when the app is closed.</li>
+    <li>Pick the <strong>Image</strong> and the <strong>Access</strong> mode (read-write lets the sampler save to it) and press <strong>Start Serving</strong>. Press <strong>Stop Serving</strong> to take the disk away from the sampler.</li>
+    <li>Connect the board with USB and switch the sampler on. The window shows <em>Waiting for the board</em>, <em>Board connected</em> and then <em>Serving to the sampler</em>.</li>
+    <li>On the sampler, scan the SCSI bus and open the disk.</li>
+</ol>
+<ul>
+    <li><strong>SCSI ID:</strong> the disk answers at ID 7 by default. The E64 sampler itself is ID 6. Change the ID in the Sampler Link window (<em>SCSI ID of the board's disk</em>); the sampler needs a rescan afterwards.</li>
+    <li><strong>Working on both sides:</strong> the app edits the served image through the helper. While the sampler is busy, Mac changes wait until it is idle, so both sides never write at the same moment.</li>
+    <li><strong>Automatic update on the sampler:</strong> after a change on the Mac the board tells the sampler that the disk changed, and presents the disk as removed and re-inserted so the sampler reloads it by itself. If the sampler still shows old contents, re-open the disk on it.</li>
+    <li><strong>Speed:</strong> the USB link is full speed (about 0.7 MB/s), so loading a large bank on the sampler takes a few seconds per MB. Copying on the Mac is not limited by it.</li>
+    <li><strong>Log:</strong> the window logs when the board connects and when the sampler reads or writes. Right-click the log to <strong>Clear Log</strong>, <strong>Copy Log</strong> or <strong>Copy Status</strong>.</li>
+</ul>
+
+<h3>Updating the Board Firmware</h3>
+<ol>
+    <li>Choose <strong>Tools &gt; Update Board Firmware&hellip;</strong> (the last item in the Tools menu).</li>
+    <li>Choose a <code>.uf2</code> file in the drop-down. Files found in the firmware build folder, Downloads, Desktop and the installed copy are listed; <strong>Other&hellip;</strong> opens a file picker.</li>
+    <li>Press <strong>Update</strong>. The board restarts into its update mode, receives the file and starts again. This takes about 15 seconds, during which the sampler loses its disk.</li>
+</ol>
+<div class="warning">
+    <strong>Important:</strong> Do not load or save on the sampler while the firmware is updating. If the update drive never appears, unplug the board, hold the BOOTSEL button while plugging it in, and try again.
+</div>
+
+<h2>Installing and Removing</h2>
+<ul>
+    <li>Install <code>EMU3DiskManager.pkg</code>. It installs the app, the background helper (<code>emu3linkd</code>, which serves the sampler disk and mounts images), the volume helper (<code>emu3nfs</code>), the board firmware file and the login agent. In the installer, <strong>Customize</strong> offers <strong>Remove old installs</strong> (on by default): it deletes leftovers of earlier versions such as the old per-user login agent and per-user helper copies. Your images and settings are kept.</li>
+    <li>To remove everything, run <code>Uninstall-EMU3.command</code> from <code>/Library/Application Support/EMU3</code>.</li>
+</ul>
+
+<h2>Troubleshooting</h2>
+<h3>Cannot Modify an Image</h3>
+<p>The image may be read-only or locked by the system. Unmount it, check file permissions in Finder, then mount it again.</p>
+
+<h3>Drop Does Not Work</h3>
+<p>Check that the target image is writable and has enough free space. Folder drops preserve the folder contents when copied into another mount.</p>
+
+<h3>Status Counts Look Empty</h3>
+<p>Select the mounted image or folder again. Counts update from the currently mounted filesystem and selected items.</p>
+
+<h3>The Sampler Says "Device Not Responding"</h3>
+<p>Check that the Sampler Link window shows <em>Serving to the sampler</em> or <em>Board connected</em>. If it says <em>Waiting for the board</em>, the board is not visible on USB: check the cable and port. If the board does not appear on the Mac at all, restart the Mac once; a stuck USB port is cleared by that.</p>
+
+<h3>The Sampler Does Not See New Banks</h3>
+<p>Wait a few seconds after the copy finished (the Mac waits for the sampler to be idle first), then re-open the disk on the sampler. A rescan of the SCSI bus also works.</p>
+
+<h3>The Background Helper Is Not Running</h3>
+<p>The log in the Sampler Link window says so. Reinstall the package, or log out and in again.</p>
+
+<h3>Cannot Open an Image</h3>
+<p>Make sure the file is a valid E-MU Emulator III/IV disk image. For BlueSCSI disk image details, visit <a href="https://bluescsi.com/docs/Disk-Images" target="_blank">BlueSCSI Disk Images Documentation</a>.</p>
+
+<div class="section">
+    <h3>Basic Workflow</h3>
+    <ol>
+        <li>Mount one or more disk images.</li>
+        <li>Option-drag a mounted image to Finder if you want a backup before editing.</li>
+        <li>Select a mounted image on the left.</li>
+        <li>Use double-click, <kbd>Return</kbd>, and <kbd>Backspace</kbd> to navigate folders.</li>
+        <li>Use drag and drop to copy files or folders between folders and mounted images.</li>
+        <li>Use the bottom status areas to confirm folder contents and disk space.</li>
+        <li>To use the image on a sampler, serve it in <strong>Sampler Link</strong> and connect the BlueSCSI board.</li>
+    </ol>
+</div>
+
+<h2>License and Credits</h2>
+<p>EMU3 Disk Manager is free software under the <strong>GNU General Public License, version 3</strong>. You may use, share and change it under that license, and it comes with no warranty. The license text is installed with the program (<code>/Library/Application Support/EMU3/LICENSE</code>), and the complete source code is at <a href="https://github.com/Mistahbrock/EMU3-Disk-Manager">github.com/Mistahbrock/EMU3-Disk-Manager</a>.</p>
+<ul>
+    <li><strong>dagargo/emu3fs</strong> and <strong>dagargo/emu3bm</strong> (GPLv3): the E-mu disk layout and bank file format this program is based on.</li>
+    <li><strong>BlueSCSI v2</strong> (GPLv3): the board firmware. The installer carries a modified build with the USB disk link.</li>
+    <li><strong>DiskJockey</strong>: a separate tool for creating .hda images, linked from the About window.</li>
+    <li>E-mu, Emulator, EOS and BlueSCSI are trademarks of their owners. This program is independent and not affiliated with them.</li>
+    <li>Built with Claude (Anthropic).</li>
+</ul>
+
+<div class="footer">
+    <p>EMU3 Disk Manager - Help Documentation</p>
+    <p style="margin-top: 10px; font-size: 12px;">For managing E-MU Emulator III/IV disk images</p>
+</div>
+
+</body>
+</html>
