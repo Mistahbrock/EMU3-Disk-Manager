@@ -341,7 +341,7 @@
 
 - (void)_showAbout:(id)sender {
     // Custom panel — NSAlert always forces its own layout, so we build our own.
-    // Layout (y measured from bottom of content area, panel height = 420):
+    // Layout (y measured from bottom of content area, panel height = 450):
     //
     //  ┌─────────────────────────────┐  ← top
     //  │       [App Icon 90×90]      │  y=310
@@ -358,7 +358,7 @@
     //  └─────────────────────────────┘
 
     NSPanel *panel = [[NSPanel alloc]
-        initWithContentRect:NSMakeRect(0, 0, 380, 420)
+        initWithContentRect:NSMakeRect(0, 0, 380, 450)
                   styleMask:NSWindowStyleMaskTitled | NSWindowStyleMaskClosable
                     backing:NSBackingStoreBuffered
                       defer:NO];
@@ -373,11 +373,11 @@
     versionLabel.font = [NSFont systemFontOfSize:9];
     versionLabel.textColor = [NSColor secondaryLabelColor];
     versionLabel.alignment = NSTextAlignmentCenter;
-    versionLabel.frame = NSMakeRect(20, 400, 340, 14);
+    versionLabel.frame = NSMakeRect(20, 430, 340, 14);
     [v addSubview:versionLabel];
 
     // ── App icon ─────────────────────────────────────────────────────────────
-    NSImageView *iv = [[NSImageView alloc] initWithFrame:NSMakeRect(145, 310, 90, 90)];
+    NSImageView *iv = [[NSImageView alloc] initWithFrame:NSMakeRect(145, 340, 90, 90)];
     iv.image = [NSImage imageNamed:NSImageNameApplicationIcon];
     iv.imageScaling = NSImageScaleProportionallyUpOrDown;
     [v addSubview:iv];
@@ -387,7 +387,7 @@
     ps.alignment = NSTextAlignmentCenter;
 
     // ── Rhyno Audio link ─────────────────────────────────────────────────────
-    NSTextView *rhynoTV = [[NSTextView alloc] initWithFrame:NSMakeRect(20, 288, 340, 18)];
+    NSTextView *rhynoTV = [[NSTextView alloc] initWithFrame:NSMakeRect(20, 318, 340, 18)];
     rhynoTV.drawsBackground = NO; rhynoTV.editable = NO; rhynoTV.selectable = YES;
     NSMutableAttributedString *rhynoAS = [[NSMutableAttributedString alloc] init];
     [rhynoAS appendAttributedString:[[NSAttributedString alloc] initWithString:@"Rhyno Audio"
@@ -402,11 +402,11 @@
     NSTextField *titleLbl = [NSTextField labelWithString:@"EMU3 Disk Manager"];
     titleLbl.font      = [NSFont boldSystemFontOfSize:17];
     titleLbl.alignment = NSTextAlignmentCenter;
-    titleLbl.frame     = NSMakeRect(10, 260, 360, 24);
+    titleLbl.frame     = NSMakeRect(10, 290, 360, 24);
     [v addSubview:titleLbl];
 
     // ── Built with Claude link ────────────────────────────────────────────────
-    NSTextView *claudeTV = [[NSTextView alloc] initWithFrame:NSMakeRect(20, 239, 340, 17)];
+    NSTextView *claudeTV = [[NSTextView alloc] initWithFrame:NSMakeRect(20, 269, 340, 17)];
     claudeTV.drawsBackground = NO; claudeTV.editable = NO; claudeTV.selectable = YES;
     NSMutableAttributedString *claudeAS = [[NSMutableAttributedString alloc] init];
     [claudeAS appendAttributedString:[[NSAttributedString alloc] initWithString:@"Built with Claude"
@@ -425,7 +425,7 @@
     desc.font      = [NSFont systemFontOfSize:11];
     desc.textColor = [NSColor secondaryLabelColor];
     desc.alignment = NSTextAlignmentCenter;
-    desc.frame     = NSMakeRect(20, 160, 340, 72);
+    desc.frame     = NSMakeRect(20, 190, 340, 72);
     [v addSubview:desc];
 
     // ── DiskJockey link for creating .hda images ─────────────────────────────
@@ -433,10 +433,10 @@
     djLabel.font = [NSFont systemFontOfSize:10];
     djLabel.textColor = [NSColor secondaryLabelColor];
     djLabel.alignment = NSTextAlignmentCenter;
-    djLabel.frame = NSMakeRect(20, 157, 340, 14);
+    djLabel.frame = NSMakeRect(20, 187, 340, 14);
     [v addSubview:djLabel];
 
-    NSTextView *djTV = [[NSTextView alloc] initWithFrame:NSMakeRect(20, 141, 340, 14)];
+    NSTextView *djTV = [[NSTextView alloc] initWithFrame:NSMakeRect(20, 171, 340, 14)];
     djTV.drawsBackground = NO; djTV.editable = NO; djTV.selectable = YES;
     NSMutableAttributedString *djAS = [[NSMutableAttributedString alloc] init];
     [djAS appendAttributedString:[[NSAttributedString alloc] initWithString:@"DiskJockey"
@@ -452,10 +452,10 @@
     visitLabel.font = [NSFont systemFontOfSize:10];
     visitLabel.textColor = [NSColor secondaryLabelColor];
     visitLabel.alignment = NSTextAlignmentCenter;
-    visitLabel.frame = NSMakeRect(20, 115, 340, 14);
+    visitLabel.frame = NSMakeRect(20, 145, 340, 14);
     [v addSubview:visitLabel];
 
-    NSTextView *bsTV = [[NSTextView alloc] initWithFrame:NSMakeRect(20, 99, 340, 14)];
+    NSTextView *bsTV = [[NSTextView alloc] initWithFrame:NSMakeRect(20, 129, 340, 14)];
     bsTV.drawsBackground = NO; bsTV.editable = NO; bsTV.selectable = YES;
     NSMutableAttributedString *bsAS = [[NSMutableAttributedString alloc] init];
     [bsAS appendAttributedString:[[NSAttributedString alloc] initWithString:@"bluescsi.com"
@@ -465,6 +465,25 @@
                      NSParagraphStyleAttributeName:  ps}]];
     [bsTV.textStorage setAttributedString:bsAS];
     [v addSubview:bsTV];
+
+    // ── Support link ──────────────────────────────────────────────────────────
+    NSTextField *supLabel = [NSTextField labelWithString:@"Free and open source. If it saved you time:"];
+    supLabel.font = [NSFont systemFontOfSize:10];
+    supLabel.textColor = [NSColor secondaryLabelColor];
+    supLabel.alignment = NSTextAlignmentCenter;
+    supLabel.frame = NSMakeRect(20, 103, 340, 14);
+    [v addSubview:supLabel];
+
+    NSTextView *supTV = [[NSTextView alloc] initWithFrame:NSMakeRect(20, 87, 340, 14)];
+    supTV.drawsBackground = NO; supTV.editable = NO; supTV.selectable = YES;
+    NSMutableAttributedString *supAS = [[NSMutableAttributedString alloc] init];
+    [supAS appendAttributedString:[[NSAttributedString alloc] initWithString:@"Buy me a coffee ☕"
+        attributes:@{NSFontAttributeName:           [NSFont systemFontOfSize:11],
+                     NSForegroundColorAttributeName: [NSColor linkColor],
+                     NSLinkAttributeName:            @"https://www.paypal.com/donate/?hosted_button_id=92QGBZBYGBBXY",
+                     NSParagraphStyleAttributeName:  ps}]];
+    [supTV.textStorage setAttributedString:supAS];
+    [v addSubview:supTV];
 
     // ── Filesystem links ──────────────────────────────────────────────────────
     NSMutableParagraphStyle *psTight = [ps mutableCopy];

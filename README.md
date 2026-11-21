@@ -47,6 +47,11 @@ firmware file.
 The app's Help (Help menu) describes every function. The notes on the disk format and how each part was observed
 on real disks are in [EMU3DiskManager/docs/provenance](EMU3DiskManager/docs/provenance/PROVENANCE.md).
 
+## Support
+
+Free and open source, made in my spare time for E-mu owners. If it saved you time, you can
+[buy me a coffee](https://www.paypal.com/donate/?hosted_button_id=92QGBZBYGBBXY). It keeps the updates coming. ☕
+
 ## License and credits
 
 GPLv3. Based on the work of David García Goñi (emu3fs, emu3bm) and the BlueSCSI project (see [CREDITS.md](CREDITS.md) for the full list, including the libraries inside the firmware). The firmware is an unofficial, modified build. E-mu, Emulator and EOS are
