@@ -19,7 +19,7 @@ The complete source code of every program in the installer is published at
 | [emu3fs](https://github.com/dagargo/emu3fs) | David García Goñi | The E-mu EOS disk layout (structures and field names) | GPL 3 or later |
 | [emu3bm](https://github.com/dagargo/emu3bm) | David García Goñi | The E-mu bank file format (offsets and structures) | GPL 3 or later |
 | [BlueSCSI v2](https://github.com/BlueSCSI/BlueSCSI-v2) | Eric Helgeson, Androda and contributors | The SCSI board firmware; the installer carries a modified build with the USB disk link | GPL 3 |
-| [DiskJockey](https://diskjockey.onegeekarmy.eu) | its author | A tool to create .hda disk images (linked from the About box, not included) | n/a |
+| [DiskJockey](https://diskjockey.onegeekarmy.eu/) | One Geek Army | A tool to create .hda disk images (linked from the About box, not included) | n/a |
 
 ## Inside the firmware build
 
