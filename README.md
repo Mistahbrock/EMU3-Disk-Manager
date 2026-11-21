@@ -49,7 +49,7 @@ on real disks are in [EMU3DiskManager/docs/provenance](EMU3DiskManager/docs/prov
 
 ## How this was made
 
-EMU3 Disk Manager was built by me together with Claude, an AI assistant from Anthropic. I decided what the program should do and how it should behave. I tested it on my own sampler, and I'm responsible for what's published here. Claude wrote much of the code.
+EMU3 Disk Manager was built by me together with [Claude](https://claude.ai), an AI assistant from [Anthropic](https://www.anthropic.com). I decided what the program should do and how it should behave. I tested it on my own sampler, and I'm responsible for what's published here. Claude wrote much of the code.
 
 Some people have strong feelings about AI, and I understand that. For me it's a tool in the same family as the sampler: the sampler lets me play instruments I could never afford or carry, and create new sounds that don't exist in real life, and this let me build software I couldn't have written alone. Either way, the point is the music and the people who make it. If you'd rather not use software made this way, that's a fair choice. Everything is open source and the code is there to read.
 
