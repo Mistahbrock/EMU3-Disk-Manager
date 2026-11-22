@@ -211,6 +211,8 @@ static BOOL WriteAll(int fd, const uint8_t *p, size_t len, volatile BOOL *stopFl
             int sr = select(fd + 1, &rs, NULL, NULL, &tv);
             BOOL lost = NO;
             if (sr < 0 && errno != EINTR) lost = YES;
+            // A yanked cable can leave the old descriptor open without any read error: treat a vanished device node as lost.
+            if (!lost && port && access(port.fileSystemRepresentation, F_OK) != 0) lost = YES;
             if (sr > 0) {
                 ssize_t n = read(fd, rx + rxlen, RXCAP - rxlen);
                 if (n > 0) rxlen += (size_t)n;
